@@ -28,9 +28,9 @@ and its green, blue, yellow and orange accents. Light uses cool paper
 | Types and constructors | Yellow |
 | Constants, numbers and booleans | Orange |
 
-Use `mono = true` for entirely monochrome syntax. **Red means error:**
+Use `mono = true` for entirely monochrome syntax. **Red is reserved for errors and Git deletions:**
 diagnostics, error messages, unresolved references and `FIXME`/`BUG` markers.
-Git additions are green, changes blue, deletions orange. Visual mode is azure.
+Git additions are green, changes blue, deletions red. Visual mode is azure.
 Purple and pink syntax are absent. ANSI red remains available for terminal
 applications; their use of it is controlled by those applications.
 

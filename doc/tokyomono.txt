@@ -18,10 +18,10 @@ single foreground color, except strings (green), functions (blue), types
 (yellow) and constants/literals (orange). Keywords and comments are told
 apart by style (bold keywords; italic comments a step dimmer than the code,
 still WCAG AA), not by hue.
-Red is reserved for errors; there is no purple or pink.
+Red is reserved for errors and Git deletions; there is no purple or pink.
 Color is otherwise used only where it carries meaning:
 
-  - git: add = green, change = blue, delete = orange
+  - git: add = green, change = blue, delete = red
   - diagnostics: error, warn, info, hint, ok
   - LSP completion and symbol kinds (blink.cmp, dropbar)
   - file icons (mini.icons)

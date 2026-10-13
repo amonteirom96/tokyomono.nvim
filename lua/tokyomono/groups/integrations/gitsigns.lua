@@ -1,4 +1,4 @@
---- gitsigns: add = green, change = blue, delete = orange.
+--- gitsigns: add = green, change = blue, delete = red.
 ---@param c tokyomono.Colors
 ---@param o tokyomono.Config
 return function(c, o)

@@ -56,7 +56,7 @@ ex.setup({ on_highlights = function(hl) hl.Normal.fg = "#ff0000" end })
 vim.cmd.colorscheme("tokyomono-dark")
 check(vim.api.nvim_get_hl(0, { name = "Normal" }).fg == 0xff0000, "on_highlights applied")
 
--- red is reserved for errors: nothing in code or kinds/icons uses it
+-- red is reserved for errors and Git deletions: nothing in code or kinds/icons uses it
 for _, v in ipairs({ "light", "dark" }) do
   local c = ex.colors(v)
   local allowed = {
@@ -66,8 +66,8 @@ for _, v in ipairs({ "light", "dark" }) do
   }
   for n, spec in pairs(ex.highlights(v)) do
     local red = spec.fg == c.red or spec.bg == c.red or spec.sp == c.red
-    local meaning = n:find("Error") 
-    check(not red or allowed[n] or meaning, ("%s: %s uses red outside errors"):format(v, n))
+    local meaning = n:find("Error") or n:find("Delete") or n:find("Removed") or n:find("Remove") or n:find("minus") or n:find("Topdelete")
+    check(not red or allowed[n] or meaning, ("%s: %s uses red outside errors/deletions"):format(v, n))
   end
   check(c.purple == nil, v .. ": no purple in the palette")
   check(c.comment ~= c.fg and require("tokyomono.util").contrast(c.comment, c.bg) >= 4.5, v .. ": comment dimmer than fg, still AA")
@@ -109,7 +109,7 @@ for _, v in ipairs({ "light", "dark" }) do
     check(vim.deep_equal(direct[group], cached[group]), v .. ": cached/direct " .. group)
   end
   local c = ex.colors(v)
-  check(c.git.delete == c.orange, v .. ": deletions use orange")
+  check(c.git.delete == c.red, v .. ": deletions use red")
   check(vim.api.nvim_get_hl(0, { name = "StModeVisual" }).bg == tonumber(c.azure:sub(2), 16), v .. ": Visual uses azure")
 end
 ex.setup({})

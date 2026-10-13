@@ -31,8 +31,8 @@
 <text x="72" y="263" fill="#343b58" xml:space="preserve">  <tspan font-weight="700">return</tspan> M.h</text>
 <text x="60" y="289" text-anchor="end" fill="#72778b">9</text>
 <text x="72" y="289" fill="#343b58" xml:space="preserve"><tspan font-weight="700">end</tspan></text>
-<rect x="28" y="300" width="38" height="22" fill="#d5cccb"/>
-<text x="60" y="315" text-anchor="end" fill="#8b471e" font-weight="700">10</text>
+<rect x="28" y="300" width="38" height="22" fill="#d9c8d0"/>
+<text x="60" y="315" text-anchor="end" fill="#a52a45" font-weight="700">10</text>
 <text x="72" y="315" fill="#343b58" xml:space="preserve"></text>
 <text x="60" y="341" text-anchor="end" fill="#72778b">11</text>
 <text x="72" y="341" fill="#343b58" xml:space="preserve"><tspan font-weight="700">return</tspan> M</text>
@@ -104,8 +104,8 @@
 <text x="702" y="263" fill="#c0caf5" xml:space="preserve">  <tspan font-weight="700">return</tspan> M.h</text>
 <text x="690" y="289" text-anchor="end" fill="#6d738e">9</text>
 <text x="702" y="289" fill="#c0caf5" xml:space="preserve"><tspan font-weight="700">end</tspan></text>
-<rect x="658" y="300" width="38" height="22" fill="#3a2d2f"/>
-<text x="690" y="315" text-anchor="end" fill="#ff9e64" font-weight="700">10</text>
+<rect x="658" y="300" width="38" height="22" fill="#392835"/>
+<text x="690" y="315" text-anchor="end" fill="#f7768e" font-weight="700">10</text>
 <text x="702" y="315" fill="#c0caf5" xml:space="preserve"></text>
 <text x="690" y="341" text-anchor="end" fill="#6d738e">11</text>
 <text x="702" y="341" fill="#c0caf5" xml:space="preserve"><tspan font-weight="700">return</tspan> M</text>

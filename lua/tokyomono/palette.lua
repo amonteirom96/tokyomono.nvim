@@ -6,7 +6,7 @@ local M = {}
 
 --- TokyoNight Night hues with a quieter syntax and a matching light palette.
 --- Light accents are darkened for readable text on the cool paper background.
---- Red is reserved for errors; deletions use orange and Visual mode uses azure.
+--- Red is reserved for errors and Git deletions; Visual mode uses azure.
 M.base = {
   light = {
     bg = "#e1e2e7",
@@ -103,7 +103,7 @@ function M.get(variant, opts)
     type = mono and c.fg or c.yellow,
     constant = mono and c.fg or c.orange,
   }
-  c.git = { add = c.green, change = c.blue, delete = c.orange }
+  c.git = { add = c.green, change = c.blue, delete = c.red }
   c.diag = { error = c.red, warn = c.yellow, info = c.blue, hint = c.cyan, ok = c.green }
 
   if opts.on_colors then
