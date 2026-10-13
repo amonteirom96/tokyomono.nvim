@@ -13,16 +13,19 @@ for _, name in ipairs({ "tokyomono-light", "tokyomono-dark", "tokyomono" }) do
   check(vim.g.colors_name == name, name .. ": colors_name=" .. tostring(vim.g.colors_name))
   local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
   check(normal.fg and normal.bg, name .. ": Normal has fg/bg")
-  -- code is fg, except strings (green), functions (blue), types (yellow) and constants (orange)
+  -- Six syntax accents, with neutral variables and operators.
   local c = ex.colors(vim.o.background)
   local want = {
+    Keyword = c.purple, ["@keyword"] = c.purple, ["@keyword.return"] = c.purple,
+    ["@variable.parameter"] = c.cyan, ["@variable.member"] = c.cyan, ["@property"] = c.cyan,
+    ["@lsp.type.parameter"] = c.cyan, ["@lsp.type.property"] = c.cyan,
     String = c.green, ["@string"] = c.green,
     Function = c.blue, ["@function.call"] = c.blue, ["@function.method"] = c.blue,
     Type = c.yellow, ["@type"] = c.yellow, ["@type.builtin"] = c.yellow, ["@constructor"] = c.yellow,
     Number = c.orange, Boolean = c.orange, ["@constant"] = c.orange, ["@constant.builtin"] = c.orange, ["@number"] = c.orange,
   }
   want.Comment, want["@comment"] = c.comment, c.comment
-  for _, g in ipairs({ "Keyword", "@variable", "@keyword", "@property", "@module", "@operator" }) do
+  for _, g in ipairs({ "@variable", "@module", "@operator" }) do
     want[g] = c.fg
   end
   for g, color in pairs(want) do
@@ -69,7 +72,7 @@ for _, v in ipairs({ "light", "dark" }) do
     local meaning = n:find("Error") or n:find("Delete") or n:find("Removed") or n:find("Remove") or n:find("minus") or n:find("Topdelete")
     check(not red or allowed[n] or meaning, ("%s: %s uses red outside errors/deletions"):format(v, n))
   end
-  check(c.purple == nil, v .. ": no purple in the palette")
+  check(c.code.keyword == c.purple, v .. ": purple keywords")
   check(c.comment ~= c.fg and require("tokyomono.util").contrast(c.comment, c.bg) >= 4.5, v .. ": comment dimmer than fg, still AA")
 end
 
@@ -95,6 +98,9 @@ check(vim.api.nvim_get_hl(0, { name = "String", link = false }).fg == nfg, "mono
 check(vim.api.nvim_get_hl(0, { name = "@function.call", link = false }).fg == nfg, "mono: @function.call in fg")
 check(vim.api.nvim_get_hl(0, { name = "@type", link = false }).fg == nfg, "mono: @type in fg")
 check(vim.api.nvim_get_hl(0, { name = "@constant.builtin", link = false }).fg == nfg, "mono: @constant.builtin in fg")
+for _, g in ipairs({ "Keyword", "@keyword", "@property", "@variable.parameter", "@lsp.type.property", "@lsp.type.parameter" }) do
+  check(vim.api.nvim_get_hl(0, { name = g, link = false }).fg == nfg, "mono: " .. g .. " in fg")
+end
 ex.setup({})
 
 -- Compiled and direct loading must produce the same highlights.

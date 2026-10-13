@@ -4,8 +4,7 @@ local M = {}
 
 --- ANSI 16-color table derived from the palette. Used by `:terminal` and by the
 --- ghostty/kitty extras, so the editor and the terminal always match.
---- The palette has no purple, so ANSI magenta uses azure (a cool
---- blue-gray in the dark variant): programs that pick magenta still get a distinct, calm color.
+--- ANSI magenta uses the same soft purple as syntax keywords.
 ---
 --- Both variants use the same roles: "black" (0) is a shade of the background
 --- and "white" (7, 15) is the text color. Most TUIs are designed for dark
@@ -29,7 +28,7 @@ function M.ansi(c)
     c.green,
     c.yellow,
     c.blue,
-    c.azure,
+    c.purple,
     c.cyan,
     c.fg,
     c.muted,
@@ -37,7 +36,7 @@ function M.ansi(c)
     bright(c.green),
     bright(c.yellow),
     bright(c.blue),
-    bright(c.azure),
+    bright(c.purple),
     bright(c.cyan),
     light and util.darken(c.fg, 0.3) or util.lighten(c.fg, 0.4),
   }

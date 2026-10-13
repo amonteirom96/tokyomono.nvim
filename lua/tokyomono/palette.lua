@@ -17,6 +17,7 @@ M.base = {
     green = "#456523",
     cyan = "#20627a",
     azure = "#4f539c",
+    purple = "#7045a0",
     blue = "#345aa0",
   },
   dark = {
@@ -28,6 +29,7 @@ M.base = {
     green = "#9ece6a",
     cyan = "#7dcfff",
     azure = "#a9b1d6",
+    purple = "#bb9af7",
     blue = "#7aa2f7",
   },
 }
@@ -40,6 +42,7 @@ M.base = {
 ---@field yellow string
 ---@field green string
 ---@field cyan string
+---@field purple string
 ---@field azure string
 ---@field blue string
 
@@ -57,7 +60,7 @@ M.base = {
 ---@field comment string     comments: fg faded toward bg, still WCAG AA
 ---@field accent string      single UI focal color (matches, prompts)
 ---@field search string      background for search matches
----@field code { string: string, func: string, type: string, constant: string }  the only hues used in code
+---@field code { string: string, func: string, type: string, constant: string, keyword: string, property: string, parameter: string }
 ---@field git { add: string, change: string, delete: string }
 ---@field diag { error: string, warn: string, info: string, hint: string, ok: string }
 
@@ -102,6 +105,9 @@ function M.get(variant, opts)
     func = mono and c.fg or c.blue,
     type = mono and c.fg or c.yellow,
     constant = mono and c.fg or c.orange,
+    keyword = mono and c.fg or c.purple,
+    property = mono and c.fg or c.cyan,
+    parameter = mono and c.fg or c.cyan,
   }
   c.git = { add = c.green, change = c.blue, delete = c.red }
   c.diag = { error = c.red, warn = c.yellow, info = c.blue, hint = c.cyan, ok = c.green }

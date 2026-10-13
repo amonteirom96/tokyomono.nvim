@@ -5,7 +5,7 @@ local util = require("tokyomono.util")
 local palette = require("tokyomono.palette")
 
 local MIN_TEXT, MIN_UI = 4.5, 3.0
-local keys = { "fg", "red", "orange", "yellow", "green", "cyan", "azure", "blue" }
+local keys = { "fg", "red", "orange", "yellow", "green", "cyan", "azure", "blue", "purple" }
 local failed = false
 
 for _, variant in ipairs({ "light", "dark" }) do

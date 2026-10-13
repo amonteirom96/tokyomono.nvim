@@ -22,9 +22,9 @@ return function(c, o)
 
   return {
     ["@variable"] = with(s.variables),
-    ["@variable.builtin"] = with(s.keywords),
-    ["@variable.parameter"] = with(s.variables),
-    ["@variable.member"] = with(s.variables),
+    ["@variable.builtin"] = with(s.keywords, c.code.keyword),
+    ["@variable.parameter"] = with(s.variables, c.code.parameter),
+    ["@variable.member"] = with(s.variables, c.code.property),
 
     ["@constant"] = with(s.constants, const),
     ["@constant.builtin"] = with(s.constants, const),
@@ -34,7 +34,7 @@ return function(c, o)
     ["@boolean"] = with(s.constants, const),
     ["@module"] = { fg = fg },
     ["@module.builtin"] = { fg = fg },
-    ["@label"] = with(s.keywords),
+    ["@label"] = with(s.keywords, c.code.keyword),
 
     ["@string"] = with(s.strings, str),
     ["@string.documentation"] = vim.tbl_extend("force", { fg = o.muted_comments and c.muted or c.comment }, s.comments),
@@ -48,7 +48,7 @@ return function(c, o)
     ["@type.builtin"] = with(s.types, typ),
     ["@type.definition"] = with(s.types, typ),
     ["@attribute"] = { fg = fg },
-    ["@property"] = with(s.variables),
+    ["@property"] = with(s.variables, c.code.property),
 
     ["@function"] = with(s.functions, func),
     ["@function.builtin"] = with(s.functions, func),
@@ -59,10 +59,10 @@ return function(c, o)
     ["@constructor"] = with(s.types, typ),
     ["@operator"] = with(s.operators),
 
-    ["@keyword"] = with(s.keywords),
-    ["@keyword.function"] = with(s.keywords),
-    ["@keyword.return"] = with(s.keywords),
-    ["@keyword.operator"] = with(s.keywords),
+    ["@keyword"] = with(s.keywords, c.code.keyword),
+    ["@keyword.function"] = with(s.keywords, c.code.keyword),
+    ["@keyword.return"] = with(s.keywords, c.code.keyword),
+    ["@keyword.operator"] = with(s.keywords, c.code.keyword),
 
     ["@punctuation"] = { fg = fg },
     ["@punctuation.special"] = { fg = fg },

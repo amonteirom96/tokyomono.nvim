@@ -1,7 +1,4 @@
---- Code is mostly `fg`. Only strings (green), functions (blue), types (yellow)
---- and constants/literals (orange) get a hue; keywords, variables and operators
---- are told apart by style (italic/bold, configurable via `styles`). Red appears
---- only on errors.
+--- Syntax uses six accents; red is reserved for errors.
 
 ---@param c tokyomono.Colors
 ---@param o tokyomono.Config
@@ -16,7 +13,7 @@ return function(c, o)
     return vim.tbl_extend("force", { fg = color or fg }, style)
   end
 
-  local keyword = with(s.keywords)
+  local keyword = with(s.keywords, c.code.keyword)
   local func = with(s.functions, c.code.func)
   local variable = with(s.variables)
   local str = with(s.strings, c.code.string)

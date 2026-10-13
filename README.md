@@ -15,13 +15,14 @@ plugins in [my dotfiles](https://github.com/amonteirom96/dotfiles).
 ## Palette
 
 Dark uses TokyoNight Night's background (`#1a1b26`), foreground (`#c0caf5`)
-and its green, blue, yellow and orange accents. Light uses cool paper
+and its green, blue, yellow, orange, cyan and soft purple accents. Light uses cool paper
 (`#e1e2e7`) with darker accents for readable text.
 
 | Code | Appearance |
 | --- | --- |
-| Variables, properties, modules, operators | Foreground |
-| Keywords | Foreground, bold |
+| Variables, modules, operators | Foreground |
+| Properties and parameters | Cyan |
+| Keywords | Soft purple, bold |
 | Comments | Dimmer foreground, italic |
 | Strings | Green |
 | Functions and methods | Blue |
@@ -31,7 +32,7 @@ and its green, blue, yellow and orange accents. Light uses cool paper
 Use `mono = true` for entirely monochrome syntax. **Red is reserved for errors and Git deletions:**
 diagnostics, error messages, unresolved references and `FIXME`/`BUG` markers.
 Git additions are green, changes blue, deletions red. Visual mode is azure.
-Purple and pink syntax are absent. ANSI red remains available for terminal
+Pink syntax is absent. ANSI red remains available for terminal
 applications; their use of it is controlled by those applications.
 
 ## Installation

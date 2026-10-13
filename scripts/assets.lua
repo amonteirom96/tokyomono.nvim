@@ -19,7 +19,7 @@ local function write(path, s)
   f:close()
 end
 
-local ACCENTS = { "green", "blue", "cyan", "azure", "yellow", "orange", "red" }
+local ACCENTS = { "green", "blue", "cyan", "purple", "yellow", "orange", "red" }
 
 -------------------------------------------------------------------------------
 -- Banner
@@ -82,8 +82,8 @@ local CODE = {
   {},
   { { "-- ", "comment" }, { "TODO", "todo" }, { " cache blended results", "comment" } },
   { { "---@param fg ", "comment" }, { "Color", "type" }, { " color on top", "comment" } },
-  { { "function", "kw" }, { " M." }, { "blend", "fn" }, { "(fg, bg, alpha)" } },
-  { { "  " }, { "local", "kw" }, { " r = fg.r * alpha + bg.r * (" }, { "1", "const" }, { " - alpha)" } },
+  { { "function", "kw" }, { " M." }, { "blend", "fn" }, { "(" }, { "fg, bg, alpha", "parameter" }, { ")" } },
+  { { "  " }, { "local", "kw" }, { " r = fg." }, { "r", "property" }, { " * alpha + bg." }, { "r", "property" }, { " * (" }, { "1", "const" }, { " - alpha)" } },
   { { "  " }, { "local", "kw" }, { " hex = util." }, { "format", "fn" }, { "(" }, { '"#%02x"', "str" }, { ", r, " }, { "true", "const" }, { ")" } },
   { { "  " }, { "return", "kw" }, { " M.h" } },
   { { "end", "kw" } },
@@ -143,7 +143,11 @@ local function editor(c, ox, oy, w, h, label)
     for _, tok in ipairs(line) do
       local text, style = tok[1], tok[2]
       if style == "kw" then
-        parts[#parts + 1] = fmt('<tspan font-weight="700">%s</tspan>', esc(text))
+        parts[#parts + 1] = fmt('<tspan fill="%s" font-weight="700">%s</tspan>', c.code.keyword, esc(text))
+      elseif style == "property" then
+        parts[#parts + 1] = fmt('<tspan fill="%s">%s</tspan>', c.code.property, esc(text))
+      elseif style == "parameter" then
+        parts[#parts + 1] = fmt('<tspan fill="%s">%s</tspan>', c.code.parameter, esc(text))
       elseif style == "comment" then
         parts[#parts + 1] = fmt('<tspan fill="%s" font-style="italic">%s</tspan>', c.comment, esc(text))
       elseif style == "str" then

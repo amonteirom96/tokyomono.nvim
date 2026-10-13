@@ -15,7 +15,7 @@ return function(c, o)
     StLsp = { fg = c.accent, bg = bg },
   }
 
-  -- No purple in the palette: Command takes azure, like ANSI magenta does.
+  -- Command and Visual retain the quiet azure UI accent.
   local modes = {
     Normal = c.blue,
     Insert = c.green,

@@ -1,4 +1,4 @@
-*tokyomono.txt*    TokyoNight, quieted down. Four hues for code, red for errors.
+*tokyomono.txt*    TokyoNight, quieted down. Six hues for code, red for errors.
 
 ==============================================================================
 CONTENTS                                                   *tokyomono-contents*
@@ -13,12 +13,12 @@ CONTENTS                                                   *tokyomono-contents*
 ==============================================================================
 1. INTRODUCTION                                        *tokyomono-introduction*
 
-tokyomono is a quiet take on the TokyoNight palette (folke/tokyonight.nvim). Code uses a
-single foreground color, except strings (green), functions (blue), types
-(yellow) and constants/literals (orange). Keywords and comments are told
-apart by style (bold keywords; italic comments a step dimmer than the code,
-still WCAG AA), not by hue.
-Red is reserved for errors and Git deletions; there is no purple or pink.
+tokyomono is a quiet take on TokyoNight (folke/tokyonight.nvim). Variables,
+modules and operators use the foreground. Strings are green, functions blue,
+types yellow, constants orange, properties and parameters cyan, and keywords
+soft purple. Keywords are bold; comments are italic and dimmer than code.
+Set mono = true for monochrome syntax.
+Red is reserved for errors and Git deletions.
 Color is otherwise used only where it carries meaning:
 
   - git: add = green, change = blue, delete = red
@@ -77,14 +77,14 @@ Defaults:
                                                           *tokyomono-on_colors*
 on_colors(colors, variant)
     Change the palette before highlights are built. Keys: `bg`, `fg`, `red`,
-    `orange`, `yellow`, `green`, `cyan`, `azure`, `blue`, `accent`,
+    `orange`, `yellow`, `green`, `cyan`, `purple`, `azure`, `blue`, `accent`,
     `surface1`, `surface2`, `surface3`, `select`, `border`, `muted`, `comment`,
-    `bg_dim`, `bg_float`, `code.{string,func,type,constant}`,
+    `bg_dim`, `bg_float`, `code.{string,func,type,constant,keyword,property,parameter}`,
     `git.{add,change,delete}`, `diag.{error,warn,info,hint,ok}`.
 
                                                                *tokyomono-mono*
 mono
-    When true, strings, functions, types and constants use `fg` like the
+    When true, all syntax accents use `fg` like the
     rest of the code.
 
                                                       *tokyomono-on_highlights*

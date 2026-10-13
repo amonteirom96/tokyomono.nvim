@@ -7,15 +7,14 @@ return function(c, o)
   local bg = o.transparent and c.none or c.bg
 
   return {
-    -- mini.icons: icons keep their colors, except red (errors only) and
-    -- purple (not in the palette), which fold into orange and azure.
+    -- Icons keep their colors; red folds into orange to avoid implying errors.
     MiniIconsAzure = { fg = c.azure },
     MiniIconsBlue = { fg = c.blue },
     MiniIconsCyan = { fg = c.cyan },
     MiniIconsGreen = { fg = c.green },
     MiniIconsGrey = { fg = c.muted },
     MiniIconsOrange = { fg = c.orange },
-    MiniIconsPurple = { fg = c.azure },
+    MiniIconsPurple = { fg = c.purple },
     MiniIconsRed = { fg = c.orange },
     MiniIconsYellow = { fg = c.yellow },
 
