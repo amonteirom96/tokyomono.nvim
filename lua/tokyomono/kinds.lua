@@ -16,7 +16,7 @@ return {
   Unit = "orange",
   Value = "orange",
   Enum = "orange",
-  Keyword = "purple",
+  Keyword = "fg",
   Snippet = "green",
   Color = "orange",
   File = "fg",

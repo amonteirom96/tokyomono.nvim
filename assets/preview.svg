@@ -9,7 +9,7 @@
 <text x="170" y="42" fill="#72778b"><tspan fill="#4f539c">●</tspan> init.lua</text>
 <text x="614" y="42" fill="#72778b" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="13" text-anchor="end" letter-spacing="2">LIGHT</text>
 <text x="60" y="81" text-anchor="end" fill="#72778b">1</text>
-<text x="72" y="81" fill="#343b58" xml:space="preserve"><tspan fill="#7045a0" font-weight="700">local</tspan> util = <tspan fill="#345aa0">require</tspan>(<tspan fill="#456523">"tokyomono.util"</tspan>)</text>
+<text x="72" y="81" fill="#343b58" xml:space="preserve"><tspan fill="#343b58" font-weight="700">local</tspan> util = <tspan fill="#345aa0">require</tspan>(<tspan fill="#456523">"tokyomono.util"</tspan>)</text>
 <text x="60" y="107" text-anchor="end" fill="#72778b">2</text>
 <text x="72" y="107" fill="#343b58" xml:space="preserve"></text>
 <text x="60" y="133" text-anchor="end" fill="#72778b">3</text>
@@ -19,23 +19,23 @@
 <text x="72" y="159" fill="#343b58" xml:space="preserve"><tspan fill="#545979" font-style="italic">---@param fg </tspan><tspan fill="#795413">Color</tspan><tspan fill="#545979" font-style="italic"> color on top</tspan></text>
 <rect x="28" y="170" width="38" height="22" fill="#c9cfdd"/>
 <text x="60" y="185" text-anchor="end" fill="#345aa0" font-weight="700">5</text>
-<text x="72" y="185" fill="#343b58" xml:space="preserve"><tspan fill="#7045a0" font-weight="700">function</tspan> M.<tspan fill="#345aa0">blend</tspan>(<tspan fill="#20627a">fg, bg, alpha</tspan>)</text>
+<text x="72" y="185" fill="#343b58" xml:space="preserve"><tspan fill="#343b58" font-weight="700">function</tspan> M.<tspan fill="#345aa0">blend</tspan>(<tspan fill="#20627a">fg, bg, alpha</tspan>)</text>
 <rect x="28" y="196" width="38" height="22" fill="#cbd1cc"/>
 <text x="60" y="211" text-anchor="end" fill="#456523" font-weight="700">6</text>
-<text x="72" y="211" fill="#343b58" xml:space="preserve">  <tspan fill="#7045a0" font-weight="700">local</tspan> r = fg.<tspan fill="#20627a">r</tspan> * alpha + bg.<tspan fill="#20627a">r</tspan> * (<tspan fill="#8b471e">1</tspan> - alpha)</text>
+<text x="72" y="211" fill="#343b58" xml:space="preserve">  <tspan fill="#343b58" font-weight="700">local</tspan> r = fg.<tspan fill="#20627a">r</tspan> * alpha + bg.<tspan fill="#20627a">r</tspan> * (<tspan fill="#8b471e">1</tspan> - alpha)</text>
 <rect x="28" y="222" width="38" height="22" fill="#cbd1cc"/>
 <text x="60" y="237" text-anchor="end" fill="#456523" font-weight="700">7</text>
-<text x="72" y="237" fill="#343b58" xml:space="preserve">  <tspan fill="#7045a0" font-weight="700">local</tspan> hex = util.<tspan fill="#345aa0">format</tspan>(<tspan fill="#456523">"#%02x"</tspan>, r, <tspan fill="#8b471e">true</tspan>)</text>
+<text x="72" y="237" fill="#343b58" xml:space="preserve">  <tspan fill="#343b58" font-weight="700">local</tspan> hex = util.<tspan fill="#345aa0">format</tspan>(<tspan fill="#456523">"#%02x"</tspan>, r, <tspan fill="#8b471e">true</tspan>)</text>
 <rect x="21" y="246" width="608" height="26" fill="#d9dae2"/>
 <text x="60" y="263" text-anchor="end" fill="#343b58" font-weight="700">8</text>
-<text x="72" y="263" fill="#343b58" xml:space="preserve">  <tspan fill="#7045a0" font-weight="700">return</tspan> M.h</text>
+<text x="72" y="263" fill="#343b58" xml:space="preserve">  <tspan fill="#343b58" font-weight="700">return</tspan> M.h</text>
 <text x="60" y="289" text-anchor="end" fill="#72778b">9</text>
-<text x="72" y="289" fill="#343b58" xml:space="preserve"><tspan fill="#7045a0" font-weight="700">end</tspan></text>
+<text x="72" y="289" fill="#343b58" xml:space="preserve"><tspan fill="#343b58" font-weight="700">end</tspan></text>
 <rect x="28" y="300" width="38" height="22" fill="#d9c8d0"/>
 <text x="60" y="315" text-anchor="end" fill="#a52a45" font-weight="700">10</text>
 <text x="72" y="315" fill="#343b58" xml:space="preserve"></text>
 <text x="60" y="341" text-anchor="end" fill="#72778b">11</text>
-<text x="72" y="341" fill="#343b58" xml:space="preserve"><tspan fill="#7045a0" font-weight="700">return</tspan> M</text>
+<text x="72" y="341" fill="#343b58" xml:space="preserve"><tspan fill="#343b58" font-weight="700">return</tspan> M</text>
 <rect x="198" y="249" width="225" height="20" rx="4" fill="#dbd0d7"/>
 <text x="206" y="263" fill="#a52a45" xml:space="preserve">■ undefined field `h`</text>
 <path d="M153 269 q2 -3 4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0" fill="none" stroke="#a52a45" stroke-width="1.3"/>
@@ -82,7 +82,7 @@
 <text x="800" y="42" fill="#6d738e"><tspan fill="#a9b1d6">●</tspan> init.lua</text>
 <text x="1244" y="42" fill="#6d738e" font-family="'Inter','SF Pro Display','Segoe UI',Helvetica,Arial,sans-serif" font-size="13" text-anchor="end" letter-spacing="2">DARK</text>
 <text x="690" y="81" text-anchor="end" fill="#6d738e">1</text>
-<text x="702" y="81" fill="#c0caf5" xml:space="preserve"><tspan fill="#bb9af7" font-weight="700">local</tspan> util = <tspan fill="#7aa2f7">require</tspan>(<tspan fill="#9ece6a">"tokyomono.util"</tspan>)</text>
+<text x="702" y="81" fill="#c0caf5" xml:space="preserve"><tspan fill="#c0caf5" font-weight="700">local</tspan> util = <tspan fill="#7aa2f7">require</tspan>(<tspan fill="#9ece6a">"tokyomono.util"</tspan>)</text>
 <text x="690" y="107" text-anchor="end" fill="#6d738e">2</text>
 <text x="702" y="107" fill="#c0caf5" xml:space="preserve"></text>
 <text x="690" y="133" text-anchor="end" fill="#6d738e">3</text>
@@ -92,23 +92,23 @@
 <text x="702" y="159" fill="#c0caf5" xml:space="preserve"><tspan fill="#8b93b3" font-style="italic">---@param fg </tspan><tspan fill="#e0af68">Color</tspan><tspan fill="#8b93b3" font-style="italic"> color on top</tspan></text>
 <rect x="658" y="170" width="38" height="22" fill="#272e43"/>
 <text x="690" y="185" text-anchor="end" fill="#7aa2f7" font-weight="700">5</text>
-<text x="702" y="185" fill="#c0caf5" xml:space="preserve"><tspan fill="#bb9af7" font-weight="700">function</tspan> M.<tspan fill="#7aa2f7">blend</tspan>(<tspan fill="#7dcfff">fg, bg, alpha</tspan>)</text>
+<text x="702" y="185" fill="#c0caf5" xml:space="preserve"><tspan fill="#c0caf5" font-weight="700">function</tspan> M.<tspan fill="#7aa2f7">blend</tspan>(<tspan fill="#7dcfff">fg, bg, alpha</tspan>)</text>
 <rect x="658" y="196" width="38" height="22" fill="#2c3430"/>
 <text x="690" y="211" text-anchor="end" fill="#9ece6a" font-weight="700">6</text>
-<text x="702" y="211" fill="#c0caf5" xml:space="preserve">  <tspan fill="#bb9af7" font-weight="700">local</tspan> r = fg.<tspan fill="#7dcfff">r</tspan> * alpha + bg.<tspan fill="#7dcfff">r</tspan> * (<tspan fill="#ff9e64">1</tspan> - alpha)</text>
+<text x="702" y="211" fill="#c0caf5" xml:space="preserve">  <tspan fill="#c0caf5" font-weight="700">local</tspan> r = fg.<tspan fill="#7dcfff">r</tspan> * alpha + bg.<tspan fill="#7dcfff">r</tspan> * (<tspan fill="#ff9e64">1</tspan> - alpha)</text>
 <rect x="658" y="222" width="38" height="22" fill="#2c3430"/>
 <text x="690" y="237" text-anchor="end" fill="#9ece6a" font-weight="700">7</text>
-<text x="702" y="237" fill="#c0caf5" xml:space="preserve">  <tspan fill="#bb9af7" font-weight="700">local</tspan> hex = util.<tspan fill="#7aa2f7">format</tspan>(<tspan fill="#9ece6a">"#%02x"</tspan>, r, <tspan fill="#ff9e64">true</tspan>)</text>
+<text x="702" y="237" fill="#c0caf5" xml:space="preserve">  <tspan fill="#c0caf5" font-weight="700">local</tspan> hex = util.<tspan fill="#7aa2f7">format</tspan>(<tspan fill="#9ece6a">"#%02x"</tspan>, r, <tspan fill="#ff9e64">true</tspan>)</text>
 <rect x="651" y="246" width="608" height="26" fill="#232532"/>
 <text x="690" y="263" text-anchor="end" fill="#c0caf5" font-weight="700">8</text>
-<text x="702" y="263" fill="#c0caf5" xml:space="preserve">  <tspan fill="#bb9af7" font-weight="700">return</tspan> M.h</text>
+<text x="702" y="263" fill="#c0caf5" xml:space="preserve">  <tspan fill="#c0caf5" font-weight="700">return</tspan> M.h</text>
 <text x="690" y="289" text-anchor="end" fill="#6d738e">9</text>
-<text x="702" y="289" fill="#c0caf5" xml:space="preserve"><tspan fill="#bb9af7" font-weight="700">end</tspan></text>
+<text x="702" y="289" fill="#c0caf5" xml:space="preserve"><tspan fill="#c0caf5" font-weight="700">end</tspan></text>
 <rect x="658" y="300" width="38" height="22" fill="#392835"/>
 <text x="690" y="315" text-anchor="end" fill="#f7768e" font-weight="700">10</text>
 <text x="702" y="315" fill="#c0caf5" xml:space="preserve"></text>
 <text x="690" y="341" text-anchor="end" fill="#6d738e">11</text>
-<text x="702" y="341" fill="#c0caf5" xml:space="preserve"><tspan fill="#bb9af7" font-weight="700">return</tspan> M</text>
+<text x="702" y="341" fill="#c0caf5" xml:space="preserve"><tspan fill="#c0caf5" font-weight="700">return</tspan> M</text>
 <rect x="828" y="249" width="225" height="20" rx="4" fill="#302430"/>
 <text x="836" y="263" fill="#f7768e" xml:space="preserve">■ undefined field `h`</text>
 <path d="M783 269 q2 -3 4 0 t4 0 t4 0 t4 0 t4 0 t4 0 t4 0" fill="none" stroke="#f7768e" stroke-width="1.3"/>

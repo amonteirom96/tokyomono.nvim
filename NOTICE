@@ -8,6 +8,6 @@ TokyoNight Night palette colors adapted from tokyonight.nvim by folke
 https://github.com/folke/tokyonight.nvim
 
 Modifications: reduced syntax hues, derived UI surfaces, matching light
-palette, cyan properties/parameters and soft purple keywords, red Git deletions, azure Visual mode.
+palette, cyan properties/parameters and neutral keywords, red Git deletions, azure Visual mode.
 The implementation license is in LICENSE; the palette source license is
 in LICENSE-TokyoNight.

@@ -1,4 +1,4 @@
---- Syntax uses six accents; red is reserved for errors.
+--- Syntax uses five accents; red is reserved for errors.
 
 ---@param c tokyomono.Colors
 ---@param o tokyomono.Config

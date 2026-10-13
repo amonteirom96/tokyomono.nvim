@@ -19,7 +19,7 @@ local function write(path, s)
   f:close()
 end
 
-local ACCENTS = { "green", "blue", "cyan", "purple", "yellow", "orange", "red" }
+local ACCENTS = { "green", "blue", "cyan", "azure", "yellow", "orange", "red" }
 
 -------------------------------------------------------------------------------
 -- Banner

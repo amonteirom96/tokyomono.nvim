@@ -13,10 +13,10 @@ for _, name in ipairs({ "tokyomono-light", "tokyomono-dark", "tokyomono" }) do
   check(vim.g.colors_name == name, name .. ": colors_name=" .. tostring(vim.g.colors_name))
   local normal = vim.api.nvim_get_hl(0, { name = "Normal" })
   check(normal.fg and normal.bg, name .. ": Normal has fg/bg")
-  -- Six syntax accents, with neutral variables and operators.
+  -- Five syntax accents, with neutral variables and operators.
   local c = ex.colors(vim.o.background)
   local want = {
-    Keyword = c.purple, ["@keyword"] = c.purple, ["@keyword.return"] = c.purple,
+    Keyword = c.fg, ["@keyword"] = c.fg, ["@keyword.return"] = c.fg,
     ["@variable.parameter"] = c.cyan, ["@variable.member"] = c.cyan, ["@property"] = c.cyan,
     ["@lsp.type.parameter"] = c.cyan, ["@lsp.type.property"] = c.cyan,
     String = c.green, ["@string"] = c.green,
@@ -72,7 +72,7 @@ for _, v in ipairs({ "light", "dark" }) do
     local meaning = n:find("Error") or n:find("Delete") or n:find("Removed") or n:find("Remove") or n:find("minus") or n:find("Topdelete")
     check(not red or allowed[n] or meaning, ("%s: %s uses red outside errors/deletions"):format(v, n))
   end
-  check(c.code.keyword == c.purple, v .. ": purple keywords")
+  check(c.code.keyword == c.fg and c.purple == nil, v .. ": neutral keywords and no purple")
   check(c.comment ~= c.fg and require("tokyomono.util").contrast(c.comment, c.bg) >= 4.5, v .. ": comment dimmer than fg, still AA")
 end
 

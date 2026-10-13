@@ -17,7 +17,6 @@ M.base = {
     green = "#456523",
     cyan = "#20627a",
     azure = "#4f539c",
-    purple = "#7045a0",
     blue = "#345aa0",
   },
   dark = {
@@ -29,7 +28,6 @@ M.base = {
     green = "#9ece6a",
     cyan = "#7dcfff",
     azure = "#a9b1d6",
-    purple = "#bb9af7",
     blue = "#7aa2f7",
   },
 }
@@ -42,7 +40,6 @@ M.base = {
 ---@field yellow string
 ---@field green string
 ---@field cyan string
----@field purple string
 ---@field azure string
 ---@field blue string
 
@@ -105,7 +102,7 @@ function M.get(variant, opts)
     func = mono and c.fg or c.blue,
     type = mono and c.fg or c.yellow,
     constant = mono and c.fg or c.orange,
-    keyword = mono and c.fg or c.purple,
+    keyword = c.fg,
     property = mono and c.fg or c.cyan,
     parameter = mono and c.fg or c.cyan,
   }

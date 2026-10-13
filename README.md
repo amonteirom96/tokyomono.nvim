@@ -15,14 +15,14 @@ plugins in [my dotfiles](https://github.com/amonteirom96/dotfiles).
 ## Palette
 
 Dark uses TokyoNight Night's background (`#1a1b26`), foreground (`#c0caf5`)
-and its green, blue, yellow, orange, cyan and soft purple accents. Light uses cool paper
+and its green, blue, yellow, orange and cyan accents. Light uses cool paper
 (`#e1e2e7`) with darker accents for readable text.
 
 | Code | Appearance |
 | --- | --- |
 | Variables, modules, operators | Foreground |
 | Properties and parameters | Cyan |
-| Keywords | Soft purple, bold |
+| Keywords | Foreground, bold |
 | Comments | Dimmer foreground, italic |
 | Strings | Green |
 | Functions and methods | Blue |

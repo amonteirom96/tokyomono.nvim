@@ -1,4 +1,4 @@
-*tokyomono.txt*    TokyoNight, quieted down. Six hues for code, red for errors.
+*tokyomono.txt*    TokyoNight, quieted down. Five hues for code, red for errors.
 
 ==============================================================================
 CONTENTS                                                   *tokyomono-contents*
@@ -16,7 +16,7 @@ CONTENTS                                                   *tokyomono-contents*
 tokyomono is a quiet take on TokyoNight (folke/tokyonight.nvim). Variables,
 modules and operators use the foreground. Strings are green, functions blue,
 types yellow, constants orange, properties and parameters cyan, and keywords
-soft purple. Keywords are bold; comments are italic and dimmer than code.
+neutral. Keywords are bold; comments are italic and dimmer than code.
 Set mono = true for monochrome syntax.
 Red is reserved for errors and Git deletions.
 Color is otherwise used only where it carries meaning:
@@ -77,7 +77,7 @@ Defaults:
                                                           *tokyomono-on_colors*
 on_colors(colors, variant)
     Change the palette before highlights are built. Keys: `bg`, `fg`, `red`,
-    `orange`, `yellow`, `green`, `cyan`, `purple`, `azure`, `blue`, `accent`,
+    `orange`, `yellow`, `green`, `cyan`, `azure`, `blue`, `accent`,
     `surface1`, `surface2`, `surface3`, `select`, `border`, `muted`, `comment`,
     `bg_dim`, `bg_float`, `code.{string,func,type,constant,keyword,property,parameter}`,
     `git.{add,change,delete}`, `diag.{error,warn,info,hint,ok}`.

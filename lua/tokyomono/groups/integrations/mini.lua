@@ -14,7 +14,7 @@ return function(c, o)
     MiniIconsGreen = { fg = c.green },
     MiniIconsGrey = { fg = c.muted },
     MiniIconsOrange = { fg = c.orange },
-    MiniIconsPurple = { fg = c.purple },
+    MiniIconsPurple = { fg = c.azure },
     MiniIconsRed = { fg = c.orange },
     MiniIconsYellow = { fg = c.yellow },
 
