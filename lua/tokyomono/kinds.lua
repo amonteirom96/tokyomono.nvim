@@ -1,0 +1,45 @@
+--- LSP CompletionItemKind / SymbolKind -> palette key.
+--- Shared by blink.cmp, dropbar and anything else that shows kinds, so the same
+--- symbol has the same color everywhere. Functions blue, strings green, types
+--- yellow and constants orange, exactly as in the code. No red (red is for errors) and no purple.
+return {
+  Text = "muted",
+  Method = "blue",
+  Function = "blue",
+  Constructor = "yellow",
+  Field = "cyan",
+  Variable = "fg",
+  Class = "yellow",
+  Interface = "yellow",
+  Module = "azure",
+  Property = "cyan",
+  Unit = "orange",
+  Value = "orange",
+  Enum = "orange",
+  Keyword = "azure",
+  Snippet = "green",
+  Color = "orange",
+  File = "fg",
+  Reference = "cyan",
+  Folder = "blue",
+  EnumMember = "orange",
+  Constant = "orange",
+  Struct = "yellow",
+  Event = "yellow",
+  Operator = "fg",
+  TypeParameter = "orange",
+  -- SymbolKind extras
+  Namespace = "azure",
+  Package = "azure",
+  String = "green",
+  Number = "orange",
+  Boolean = "orange",
+  Array = "orange",
+  Object = "yellow",
+  Key = "cyan",
+  Null = "muted",
+  -- Sources
+  Copilot = "cyan",
+  Codeium = "cyan",
+  Supermaven = "cyan",
+}

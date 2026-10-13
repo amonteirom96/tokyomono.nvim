@@ -1,0 +1,13 @@
+TokyoMono
+
+Implementation adapted from onemono.nvim by Arthur Monteiro (MIT).
+https://github.com/amonteirom96/onemono.nvim
+
+TokyoNight Night palette colors adapted from tokyonight.nvim by folke
+(Apache License 2.0).
+https://github.com/folke/tokyonight.nvim
+
+Modifications: reduced syntax hues, derived UI surfaces, matching light
+palette, blue-gray in place of purple, orange deletions, azure Visual mode.
+The implementation license is in LICENSE; the palette source license is
+in LICENSE-TokyoNight.

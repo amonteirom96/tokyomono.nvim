@@ -1,0 +1,136 @@
+*tokyomono.txt*    TokyoNight, quieted down. Four hues for code, red for errors.
+
+==============================================================================
+CONTENTS                                                   *tokyomono-contents*
+
+  1. Introduction ............................ |tokyomono-introduction|
+  2. Usage ................................... |tokyomono-usage|
+  3. Configuration ........................... |tokyomono-config|
+  4. Commands ................................ |tokyomono-commands|
+  5. API ..................................... |tokyomono-api|
+  6. Extras .................................. |tokyomono-extras|
+
+==============================================================================
+1. INTRODUCTION                                        *tokyomono-introduction*
+
+tokyomono is a quiet take on the TokyoNight palette (folke/tokyonight.nvim). Code uses a
+single foreground color, except strings (green), functions (blue), types
+(yellow) and constants/literals (orange). Keywords and comments are told
+apart by style (bold keywords; italic comments a step dimmer than the code,
+still WCAG AA), not by hue.
+Red is reserved for errors; there is no purple or pink.
+Color is otherwise used only where it carries meaning:
+
+  - git: add = green, change = blue, delete = orange
+  - diagnostics: error, warn, info, hint, ok
+  - LSP completion and symbol kinds (blink.cmp, dropbar)
+  - file icons (mini.icons)
+  - search and TODO/FIXME/NOTE markers
+
+Highlights are compiled to LuaJIT bytecode and cached, so a cached load takes
+a few milliseconds.
+
+==============================================================================
+2. USAGE                                                      *tokyomono-usage*
+
+>lua
+    require("tokyomono").setup({})   -- optional
+    vim.cmd.colorscheme("tokyomono")
+<
+                                  *tokyomono* *tokyomono-light* *tokyomono-dark*
+  tokyomono         follows 'background' (or the `variant` option)
+  tokyomono-light   always light
+  tokyomono-dark    always dark
+
+Neovim detects the terminal background at startup. When you use `tokyomono`,
+the theme follows the terminal and switches when 'background' changes.
+
+==============================================================================
+3. CONFIGURATION                                             *tokyomono-config*
+
+Defaults:
+>lua
+    require("tokyomono").setup({
+      variant = "auto",        -- "auto" | "light" | "dark"
+      transparent = false,
+      terminal_colors = true,
+      dim_inactive = false,
+      muted_comments = false,
+      mono = false,            -- all code in fg
+      float = { solid = false },
+      styles = {
+        comments = { italic = true },
+        keywords = { bold = true },
+        functions = {}, variables = {}, strings = {},
+        types = {}, constants = {}, operators = {},
+      },
+      integrations = {
+        blink = true, dropbar = true, gitsigns = true, grug_far = true,
+        lazy = true, mason = true, mini = true,
+        semantic_tokens = true, statusline = true, treesitter = true,
+      },
+      cache = true,
+      on_colors = nil,         -- fun(colors, variant)
+      on_highlights = nil,     -- fun(hl, colors, variant)
+    })
+<
+                                                          *tokyomono-on_colors*
+on_colors(colors, variant)
+    Change the palette before highlights are built. Keys: `bg`, `fg`, `red`,
+    `orange`, `yellow`, `green`, `cyan`, `azure`, `blue`, `accent`,
+    `surface1`, `surface2`, `surface3`, `select`, `border`, `muted`, `comment`,
+    `bg_dim`, `bg_float`, `code.{string,func,type,constant}`,
+    `git.{add,change,delete}`, `diag.{error,warn,info,hint,ok}`.
+
+                                                               *tokyomono-mono*
+mono
+    When true, strings, functions, types and constants use `fg` like the
+    rest of the code.
+
+                                                      *tokyomono-on_highlights*
+on_highlights(hl, colors, variant)
+    Change or add highlight groups. `hl` maps group names to
+    |nvim_set_hl()| specs, with colors as "#rrggbb" strings.
+
+The compiled cache is keyed by a hash of your options, so changes take effect
+on the next `:colorscheme`. The hash covers function bodies but not captured
+upvalues. If you change such a value, run |:TokyomonoCompile|.
+
+==============================================================================
+4. COMMANDS                                                *tokyomono-commands*
+
+                                                            *:TokyomonoCompile*
+:TokyomonoCompile       Delete and rebuild the compiled cache, then reload.
+
+                                                         *:TokyomonoClearCache*
+:TokyomonoClearCache    Delete the compiled cache.
+
+                                                             *:TokyomonoExtras*
+:TokyomonoExtras [dir]  Write the Ghostty, Kitty and Lazygit themes to [dir]
+                        (default: the plugin's `extras/` directory).
+
+==============================================================================
+5. API                                                          *tokyomono-api*
+
+require("tokyomono").setup({opts})         Configure.
+require("tokyomono").load({name})          Apply a colorscheme by name.
+require("tokyomono").colors({variant})     Return the full palette.
+require("tokyomono").highlights({variant}) Return the final highlight table.
+require("tokyomono").compile()             Same as |:TokyomonoCompile|.
+require("tokyomono").clear_cache()         Same as |:TokyomonoClearCache|.
+require("tokyomono").extras({dir})         Same as |:TokyomonoExtras|.
+
+==============================================================================
+6. EXTRAS                                                    *tokyomono-extras*
+
+extras/ghostty/tokyomono-{light,dark}
+    Copy to ~/.config/ghostty/themes/ and set:
+    `theme = light:tokyomono-light,dark:tokyomono-dark`
+
+extras/kitty/tokyomono-{light,dark}.conf
+    Copy to ~/.config/kitty/{light,dark}-theme.auto.conf.
+
+extras/lazygit/tokyomono-{light,dark}.yml
+    Merge into config.yml, or append to LG_CONFIG_FILE.
+
+ vim:tw=78:ts=8:ft=help:norl:
