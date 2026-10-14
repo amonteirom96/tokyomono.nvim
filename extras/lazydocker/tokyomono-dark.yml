@@ -1,0 +1,13 @@
+# tokyomono-dark —  lazydocker
+gui:
+  theme:
+    activeBorderColor:
+      - "#7aa2f7"
+      - "bold"
+    inactiveBorderColor:
+      - "#3c3f50"
+    optionsTextColor:
+      - "#7aa2f7"
+    selectedLineBgColor:
+      - "#272936"
+
